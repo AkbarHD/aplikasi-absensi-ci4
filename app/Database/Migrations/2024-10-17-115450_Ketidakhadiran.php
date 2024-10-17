@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Pegawai extends Migration
+class Ketidakhadiran extends Migration
 {
     public function up()
     {
@@ -15,45 +15,38 @@ class Pegawai extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'nip' => [
-                'type' => 'VARCHAR',
-                'constraint' => '50',
+            'id_pegawai' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
             ],
-            'nama' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
-            ],
-            'jenis_kelamin' => [
-                'type' => 'VARCHAR',
-                'constraint' => 10,
-            ],
-            'alamat' => [
+            'keterangan' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
-            'no_handphone' => [
+            'tanggal' => [
+                'type' => 'DATE',
+            ],
+            'deskripsi' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            'file' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            'status' => [
                 'type' => 'VARCHAR',
                 'constraint' => 20,
             ],
-            'jabatan' => [
-                'type' => 'VARCHAR',
-                'constraint' => 50,
-            ],
-            'lokasi_presensi' => [
-                'type' => 'VARCHAR',
-                'constraint' => 50,
-            ],
-            'foto' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
-            ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('pegawai');
+        $this->forge->addForeignKey('id_pegawai', 'pegawai', 'id');
+        $this->forge->createTable('ketidakhadiran');
     }
 
     public function down()
     {
-        $this->forge->dropTable('pegawai');
+        $this->forge->dropTable('ketidakhadiran');
     }
 }
