@@ -9,11 +9,8 @@
     <title>Sign In | PlainAdmin Demo</title>
 
     <!-- ========== All CSS files linkup ========= -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/lineicons.css" />
-    <link rel="stylesheet" href="assets/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/fullcalendar.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/main.css') ?> " />
 </head>
 
 <body>
@@ -49,16 +46,16 @@
                                 </p>
                             </div>
                             <div class="cover-image">
-                                <img src="assets/images/auth/signin-image.svg" alt="" />
+                                <img src="<?= base_url('assets/images/auth/signin-image.svg') ?>" alt="" />
                             </div>
                             <div class="shape-image">
-                                <img src="assets/images/auth/shape.svg" alt="" />
+                                <img src="<?= base_url('assets/images/auth/shape.svg') ?>" alt="" />
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- end col -->
-                <div class="col-md-6 col-lg-6">
+                <div class="col-md-6 col-lg-6 d-flex justify-content-center align-content-center">
                     <div class="signin-wrapper">
                         <div class="form-wrapper">
                             <h6 class="mb-15">Sign In Form</h6>
@@ -66,7 +63,9 @@
                                 Start creating the best possible user experience for you
                                 customers.
                             </p>
-                            <?= password_hash('password', PASSWORD_DEFAULT); ?>
+                            <div class="text-danger text-center">
+                                <?= session()->getFlashdata('pesan'); ?>
+                            </div>
                             <form method="post" action="<?= base_url('login') ?>">
                                 <div class="row">
                                     <div class="col-12">
@@ -120,15 +119,8 @@
 
 
     <!-- ========= All Javascript files linkup ======== -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/Chart.min.js"></script>
-    <script src="assets/js/dynamic-pie-chart.js"></script>
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/fullcalendar.js"></script>
-    <script src="assets/js/jvectormap.min.js"></script>
-    <script src="assets/js/world-merc.js"></script>
-    <script src="assets/js/polyfill.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="<?= base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/main.js') ?>"></script>
 </body>
 
 </html>
