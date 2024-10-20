@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.svg') ?>" type="image/x-icon" />
     <title>Sign In | PlainAdmin Demo</title>
 
     <!-- ========== All CSS files linkup ========= -->
@@ -63,9 +63,16 @@
                                 Start creating the best possible user experience for you
                                 customers.
                             </p>
-                            <div class="text-danger text-center">
-                                <?= session()->getFlashdata('pesan'); ?>
-                            </div>
+
+                            <?php if (!empty(session()->getFlashdata('pesan'))): ?>
+                                <div class="text-danger text-center">
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong><?= session()->getFlashdata('pesan'); ?></strong>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            <?php endif ?>
                             <form method="post" action="<?= base_url('login') ?>">
                                 <div class="row">
                                     <div class="col-12">

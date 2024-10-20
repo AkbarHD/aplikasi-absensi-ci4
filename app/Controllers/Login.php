@@ -35,8 +35,16 @@ class Login extends BaseController
             $cekUsername = $loginModel->where('username', $username)->first();
             // dd($cekUsername);
             if ($cekUsername) {
+                // pengecekan session untuk filter
+                $session_data = [
+                    'logged_in' => TRUE,
+                    'role_id' => $cekUsername['role'],
+                ];
+                $session->set($session_data);
+
                 $password_db = $cekUsername['password'];
-                $cek_password = password_verify($password, $password_db);
+                -
+                    $cek_password = password_verify($password, $password_db);
                 if ($cek_password) {
                     switch ($cekUsername['role']) {
                         case "admin":
@@ -58,5 +66,12 @@ class Login extends BaseController
             }
         }
         // dd($this->request->getVar('username'));
+    }
+
+    public function logout()
+    {
+        $session = session();
+        $session->destroy();
+        return redirect()->to('/');
     }
 }
