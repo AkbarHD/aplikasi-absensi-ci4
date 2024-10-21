@@ -9,6 +9,10 @@ class Home extends BaseController
 {
     public function index()
     {
-        echo "Halaman pegawai";
+        // echo "Halaman pegawai";
+        $data = [
+            'title' => 'Home',
+        ];
+        return view('pegawai/home', $data);
     }
 }

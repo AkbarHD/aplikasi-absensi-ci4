@@ -37,6 +37,7 @@ class Login extends BaseController
             if ($cekUsername) {
                 // pengecekan session untuk filter
                 $session_data = [
+                    'username' => $cekUsername['username'],
                     'logged_in' => TRUE,
                     'role_id' => $cekUsername['role'],
                 ];
