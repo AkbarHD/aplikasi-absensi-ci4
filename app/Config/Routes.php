@@ -33,6 +33,8 @@ $routes->get('admin/jabatan/delete/(:segment)', 'Admin\Jabatan:delete/$1', [
     'filter' => 'AdminFilter'
 ]);
 
+// pegawai
+
 $routes->get('pegawai/home', 'Pegawai\Home::index', [
     'filter' => 'PegawaiFilter'
 ]);

@@ -18,6 +18,7 @@ class Login extends BaseController
 
     public function login_action()
     {
+        // dd($this->request->getVar('username'));
         $rules = [
             'username' => 'required',
             'password' => 'required'
@@ -40,7 +41,7 @@ class Login extends BaseController
                     'username' => $cekUsername['username'],
                     'logged_in' => TRUE,
                     'role_id' => $cekUsername['role'],
-                ];
+                ]
                 $session->set($session_data);
 
                 $password_db = $cekUsername['password'];

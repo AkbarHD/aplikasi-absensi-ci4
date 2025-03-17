@@ -18,11 +18,12 @@ class PegawaiFilter implements FilterInterface
         if (session()->get('role_id') !== 'pegawai') {
             // Set flashdata atau pesan 403 forbidden
             session()->setFlashdata('pesan', 'Anda tidak memiliki akses ke halaman ini.');
+            return redirect()->to('/');
 
             // Mengembalikan respons 403 Forbidden
-            return \Config\Services::response()
-                ->setStatusCode(403)
-                ->setBody('403 Forbidden: Anda tidak memiliki hak akses ke halaman ini.');
+            // return \Config\Services::response()
+            //     ->setStatusCode(403)
+            //     ->setBody('403 Forbidden: Anda tidak memiliki hak akses ke halaman ini.');
         }
     }
 
