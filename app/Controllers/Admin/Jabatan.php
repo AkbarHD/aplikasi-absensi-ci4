@@ -23,6 +23,7 @@ class Jabatan extends BaseController
         $jabatanModel = new JabatanModel();
         $data = [
             'title' => 'Data Jabatan',
+            // validation harus seperti ini
             'validation' => \Config\Services::validation()
         ];
         return view('admin/jabatan/create', $data);
