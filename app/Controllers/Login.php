@@ -24,12 +24,12 @@ class Login extends BaseController
             'password' => 'required'
         ];
 
-        if (!$this->validate($rules)) {
+        if (!$this->validate($rules)) { // jika validasi tidak terpenuhi
             $data['validation'] = $this->validator;
             return view('auth/login', $data);
         } else {
             $session = session();
-            $loginModel = new LoginModel();
+            $loginModel = new LoginModel(); // mengubungkan ke model
             $username = $this->request->getVar('username');
             $password = $this->request->getVar('password');
 

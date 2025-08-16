@@ -358,6 +358,7 @@
                         <img src="<?= base_url('assets/images/profile/profile-image.png') ?>" alt="" />
                       </div>
                       <div>
+                        <!-- nama user -->
                         <h6 class="fw-500 text-uppercase"><?= session()->get('username') ?></h6>
                         <p><?= session()->get('role_id') ?></p>
                       </div>

@@ -10,8 +10,12 @@ class AdminFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (!session()->get('logged_in')) {
+        // stelah kita konfiguras disini, harus di daftarakan di Routes.php dan app/config/Filters.php
+
+        if (!session()->get('logged_in')) { // jika user belum login
+            // Set flashdata atau pesan
             session()->setFlashdata('pesan', 'Silahkan Login Terlebih Dahulu');
+            // Redirect ke halaman login
             return redirect()->to('/');
         }
 

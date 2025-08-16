@@ -10,9 +10,11 @@ class PegawaiFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (!session()->get('logged_in')) {
-            session()->setFlashdata('pesan', 'Silahkan Login Terlebih Dahulu');
-            return redirect()->to('/');
+        // stelah kita konfiguras disini, harus di daftarakan di Routes.php dan app/config/Filters.php
+
+        if (!session()->get('logged_in')) { // jika user belum login
+            session()->setFlashdata('pesan', 'Silahkan Login Terlebih Dahulu'); // Set flashdata atau pesan
+            return redirect()->to('/'); // Redirect ke halaman login
         }
 
         if (session()->get('role_id') !== 'pegawai') {

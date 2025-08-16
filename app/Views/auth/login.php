@@ -18,22 +18,11 @@
     <div id="preloader">
         <div class="spinner"></div>
     </div>
-    <!-- ======== Preloader =========== -->
 
-
-    <!-- ======== sidebar-nav end =========== -->
-
-
-    <!-- ========== header start ========== -->
-
-    <!-- ========== header end ========== -->
 
     <!-- ========== signin-section start ========== -->
     <section class="signin-section">
         <div class="container-fluid">
-            <!-- ========== title-wrapper start ========== -->
-
-            <!-- ========== title-wrapper end ========== -->
 
             <div class="row g-0 auth-row">
                 <div class="col-md-6 col-lg-6">

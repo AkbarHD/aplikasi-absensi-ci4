@@ -40,8 +40,9 @@ class Ketidakhadiran extends Migration
                 'constraint' => 20,
             ],
         ]);
-        $this->forge->addKey('id', true);
-        $this->forge->addForeignKey('id_pegawai', 'pegawai', 'id');
+        $this->forge->addKey('id', true); // primary key
+        $this->forge->addForeignKey('id_pegawai', 'pegawai', 'id'); // foreign key
+        // Create the ketidakhadiran table
         $this->forge->createTable('ketidakhadiran');
     }
 
