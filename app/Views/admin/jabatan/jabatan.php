@@ -17,7 +17,7 @@
                 <td><?= $jab['jabatan'] ?></td> 
                 <td>
                     <a href="<?= base_url('admin/jabatan/edit/' . $jab['id']) ?>" class="btn btn-warning">Edit</a>
-                    <a href="<?= base_url('admin/jabatan/delete/' . $jab['id']) ?>" class="btn btn-danger">Delete</a>
+                    <a href="<?= base_url('admin/jabatan/delete/' . $jab['id']) ?>" class="btn btn-danger tombol-hapus">Delete</a>
                 </td>
             </tr>
         </tbody>

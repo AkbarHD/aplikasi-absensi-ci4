@@ -507,6 +507,26 @@
         <?php } ?>
       });
 
+      // sweetalert untuk konfirmasi hapus
+      $('.tombol-hapus').on('click', function (e) {
+        e.preventDefault();
+        var getLink = $(this).attr('href');
+
+        Swal.fire({
+          title: 'Apakah anda yakin?',
+          text: "Data akan dihapus!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Hapus'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            document.location.href = getLink;
+          }
+        })
+      });
+
 
     });
   </script>
