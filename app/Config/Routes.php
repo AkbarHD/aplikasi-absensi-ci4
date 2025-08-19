@@ -21,6 +21,13 @@ $routes->get('admin/jabatan/edit/(:segment)', 'Admin\Jabatan::edit/$1', ['filter
 $routes->post('admin/jabatan/update/(:segment)', 'Admin\Jabatan::update/$1', ['filter' => 'AdminFilter']);
 $routes->get('admin/jabatan/delete/(:segment)', 'Admin\Jabatan::delete/$1', ['filter' => 'AdminFilter']);
 
+$routes->get('admin/lokasi_presensi', 'Admin\LokasiPresensi::index', ['filter' => 'AdminFilter']);
+$routes->get('admin/lokasi_presensi/create', 'Admin\LokasiPresensi::create', ['filter' => 'AdminFilter']);
+$routes->post('admin/lokasi_presensi/store', 'Admin\LokasiPresensi::store', ['filter' => 'AdminFilter']);
+$routes->get('admin/lokasi_presensi/edit/(:segment)', 'Admin\LokasiPresensi::edit/$1', ['filter' => 'AdminFilter']);
+$routes->post('admin/lokasi_presensi/update/(:segment)', 'Admin\LokasiPresensi::update/$1', ['filter' => 'AdminFilter']);
+$routes->get('admin/lokasi_presensi/delete/(:segment)', 'Admin\LokasiPresensi::delete/$1', ['filter' => 'AdminFilter']);
+
 // pegawai
 
 $routes->get('pegawai/home', 'Pegawai\Home::index', [
