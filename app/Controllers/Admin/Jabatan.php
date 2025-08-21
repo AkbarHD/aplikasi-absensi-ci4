@@ -28,6 +28,7 @@ class Jabatan extends BaseController
         ];
         return view('admin/jabatan/create', $data);
     }
+    // coba aja
 
     public function store()
     {
