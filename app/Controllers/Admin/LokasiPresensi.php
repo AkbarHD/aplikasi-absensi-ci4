@@ -33,7 +33,7 @@ class LokasiPresensi extends BaseController
     {
         $rules = [
             'jabatan' => [
-                'rules' => 'required',
+                'rules' => 'required|is_unique[jabatan.jabatan]',
                 'errors' => [
                     'required' => '{field} harus diisi'
                 ],
